@@ -1,0 +1,50 @@
+server:
+  port: 8003
+spring:
+  application:
+    name: PROVIDER
+  #配置rabbitMq 服务器
+  rabbitmq:
+#  单机
+    host: 192.168.80.40
+    port: 5672
+    username: admin
+    password: admin
+#  RabbitMQ集群，addresses一定要逗号分隔
+#    addresses: 192.168.80.10:5672,192.168.80.20:5672,192.168.80.30:5672
+#    username: admin
+#    password: admin
+#    #虚拟host 可以不设置,使用server默认host
+#    virtual-host: demo_VH
+#  RabbitMQ集群配合haproxy
+#    host: 192.168.80.40
+#    port: 5672
+#    username: admin
+#    password: admin
+##    virtual-host: demo_VH
+#    publisher-confirms: true
+#    ssl:
+#      enabled: true
+#      key-store: file:/Users/zhangnannan/mydata/rabbitmq-ssl/client_key.p12
+#      key-store-password: 123456
+#      trust-store: file:/Users/zhangnannan/mydata/rabbitmq-ssl/rabbitstore
+#      trust-store-password: 123456
+#      verifyHostname: false
+
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://localhost:8001/eureka/
+#ribbon的超时时间, 防止feign调用超时
+ribbon:
+  eureka:
+    enabled: true #开启eureka负载均衡策略
+  ReadTimeout: 15000
+  ConnectTimeout: 15000
+  MaxAutoRetries: 1 #同一台实例最大重试次数,不包括首次调用
+  MaxAutoRetriesNextServer: 1 #重试负载均衡其他的实例最大重试次数,不包括首次调用
+  OkToRetryOnAllOperations: false  #是否所有操作都重试
+ka:
+  password: 111111

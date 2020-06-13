@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/MessageCertification/MessageCertification.iml" filepath="$PROJECT_DIR$/MessageCertification/MessageCertification.iml" />
+      <module fileurl="file://$PROJECT_DIR$/MessageCommon/MessageCommon.iml" filepath="$PROJECT_DIR$/MessageCommon/MessageCommon.iml" />
+      <module fileurl="file://$PROJECT_DIR$/MessageConsumer/MessageConsumer.iml" filepath="$PROJECT_DIR$/MessageConsumer/MessageConsumer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/MessageProvider/MessageProvider.iml" filepath="$PROJECT_DIR$/MessageProvider/MessageProvider.iml" />
+      <module fileurl="file://$PROJECT_DIR$/MessageQueueDemo.iml" filepath="$PROJECT_DIR$/MessageQueueDemo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/MessageRegistry/MessageRegistry.iml" filepath="$PROJECT_DIR$/MessageRegistry/MessageRegistry.iml" />
+    </modules>
+  </component>
+</project>

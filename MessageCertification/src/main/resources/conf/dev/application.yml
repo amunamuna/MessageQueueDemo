@@ -1,0 +1,39 @@
+server:
+  port: 8002
+spring:
+  application:
+    name: CERTIFICATION
+  datasource:
+    url: jdbc:mysql://localhost:3306/messageDemo?useUnicode=true&characterEncoding=utf-8&serverTimezone=Asia/Shanghai
+    username: root
+    password: root
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://localhost:8001/eureka/
+#ribbon的超时时间, 防止feign调用超时
+ribbon:
+  eureka:
+    enabled: true #开启eureka负载均衡策略
+  ReadTimeout: 15000
+  ConnectTimeout: 15000
+  MaxAutoRetries: 1 #同一台实例最大重试次数,不包括首次调用
+  MaxAutoRetriesNextServer: 1 #重试负载均衡其他的实例最大重试次数,不包括首次调用
+  OkToRetryOnAllOperations: false  #是否所有操作都重试
+mybatis:
+  mapper-locations:
+    - classpath:dao/*.xml
+    - classpath*:com/**/mapper/*.xml
+
+jwt:
+  checksum: message-certificate-secret #校验码,JWT加解密使用的密钥
+  expiration: 604800 #JWT的超期限时间(60*60*24)
+
+logging:
+  level:
+    root: info #日志配置DEBUG,INFO,WARN,ERROR
+#    com.macro.mall: debug
+#  file: demo_log.log #配置日志生成路径
+#  path: /var/logs #配置日志文件名称
