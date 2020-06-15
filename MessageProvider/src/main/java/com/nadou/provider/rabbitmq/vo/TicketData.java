@@ -9,7 +9,7 @@ import lombok.Data;
 /**
  *@ClassName TicketData
  *@Description TODO
- *@Author nannan.zhang
+ *@Author
  *@Date 2020/6/13 08:23
  *@Version 1.0
  **/

@@ -7,7 +7,7 @@ import lombok.Data;
 /**
  *@ClassName KeyUtil
  *@Description 需推到mq的数据
- *@Author nannan.zhang
+ *@Author
  *@Date 2020/6/2 17:28
  *@Version 1.0
  **/

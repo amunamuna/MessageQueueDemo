@@ -74,12 +74,14 @@
               <outputDirectory>${project.build.directory}</outputDirectory>
               <resources>
                 <resource>
-                  <directory>src/main/resources/conf/${package.environment}/</directory>
+                  <directory>src/main/resources/</directory>
                   <!--filtering将该路径下所有文件拷贝出现-->
                   <!--<filtering>false</filtering>-->
                   <!--include 指定拷贝该路径下的某些文件-->
                   <includes>
                     <include>application.*</include>
+                    <!--<include>application-${package.environment}.*</include>-->
+                    <!--<include>bootstrap-${package.environment}.*</include>-->
                   </includes>
                 </resource>
               </resources>

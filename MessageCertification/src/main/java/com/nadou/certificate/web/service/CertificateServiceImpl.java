@@ -23,7 +23,7 @@ import lombok.extern.slf4j.Slf4j;
 /**
  *@ClassName certificateService
  *@Description 认证
- *@Author nannan.zhang
+ *@Author
  *@Date 2020/6/12 11:11
  *@Version 1.0
  **/
@@ -75,7 +75,7 @@ public class CertificateServiceImpl implements CertificateService {
       String tb = AESCipher.encrypt(ticket, toAdmin.getPassword());//kb
       LogConsole.info("用" + toAdmin.getUsername() + "的密码加密session key和Authenticator,生成tb:" + tb);
       ClientCerResponse clientCerResponse = new ClientCerResponse(ta, tb);
-      LogConsole.info("将ta,tb封装成json返回给客户端.");
+      LogConsole.info("将ta,tb封装成json返回给客户端provider.");
       return JSONObject.toJSON(clientCerResponse);
     } catch (Exception e) {
       log.error("ase加密失敗:", e);
@@ -87,16 +87,16 @@ public class CertificateServiceImpl implements CertificateService {
   @Override
   public CommonResult serverCertificate(String kab, String authToken) {
     if (jwtTokenUtil.validateToken(authToken, kab)) {
-      LogConsole.info("AS认证成功,开始与客户端进行双向认证");
+      LogConsole.info("AS与consumer单向认证成功,开始与provider进行双向认证");
       CommonResult commonResult = clientService.clientCert(kab);
       if (commonResult != null && (ResultCode.SUCCESS.getCode() == commonResult.getCode())) {
-        LogConsole.info("与客户端双向认证成功");
+        LogConsole.info("与provider双向认证成功");
         return commonResult;
       }
       return CommonResult.failed("信息接收端,认证失败:AS与客户端双向认证失败!");
     }
-    LogConsole.info("信息接收端,AS认证失败!");
-    return CommonResult.failed("信息接收端,AS认证失败!");
+    LogConsole.info("consumer,AS认证失败!");
+    return CommonResult.failed("consumer,AS认证失败!");
   }
 
   public UmsAdmin getAdminByUsername(String username) {

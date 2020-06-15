@@ -5,9 +5,8 @@ import lombok.Getter;
 @Getter
 public enum QueueEnum {
 
-    QUEUE_LOG("log.direct", "log.queue", "log.routekey"),//日志队列
-    QUEUE_ORDINARY("ordinary.direct", "ordinary.queue", "ordinary.routekey"),//普通队列
-    QUEUE_DEAD_LETTER("deadletter.direct", "deadletter.queue", "deadletter.routekey");//死信队列
+    QUEUE_LOG("log_exchange_direct", "log_queue_direct", "log.routekey"),//日志队列
+    QUEUE_TOPIC_DEMO("demo_exchange_topic", "demo_queue_topic", "");//topic demo 队列
 
     /**
      * 交换名称

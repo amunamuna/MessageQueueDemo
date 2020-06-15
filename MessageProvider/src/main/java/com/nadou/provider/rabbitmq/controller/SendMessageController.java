@@ -16,7 +16,7 @@ import lombok.extern.slf4j.Slf4j;
 /**
  *@ClassName SendMessageController
  *@Description TODO
- *@Author nannan.zhang
+ *@Author
  *@Date 2020/1/8 3:44 PM
  *@Version 1.0
  **/

@@ -13,7 +13,7 @@ import com.nadou.common.utils.SecureRandomUtil;
 /**
  *@ClassName TrasportDataUtils
  *@Description 自己封装的加/解密
- *@Author nannan.zhang
+ *@Author
  *@Date 2020/6/2 16:05
  *@Version 1.0
  **/
@@ -23,7 +23,7 @@ public class TransportDataUtils {
 
   /**
   * @Description: 加密
-  * @Author:nannan.zhang
+  * @Author:
   * @Date:2020/6/2 17:47
   * @Parameters:
   * @Return:
@@ -47,7 +47,7 @@ public class TransportDataUtils {
 
   /**
   * @Description: 解密
-  * @Author:nannan.zhang
+  * @Author:
   * @Date:2020/6/2 17:47
   * @Parameters:
   * @Return:

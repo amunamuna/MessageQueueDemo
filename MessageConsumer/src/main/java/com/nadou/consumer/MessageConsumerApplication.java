@@ -8,7 +8,7 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
 /**
  *@ClassName MessageConsumerApplication
  *@Description TODO
- *@Author nannan.zhang
+ *@Author
  *@Date 2020/1/10 2:20 PM
  *@Version 1.0
  **/

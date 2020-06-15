@@ -10,7 +10,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 /**
  *@ClassName MessageCertificationApplication
  *@Description AS认证
- *@Author nannan.zhang
+ *@Author
  *@Date 2020/6/12 16:55
  *@Version 1.0
  **/

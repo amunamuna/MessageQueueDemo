@@ -5,7 +5,7 @@ import lombok.extern.slf4j.Slf4j;
 /**
  *@ClassName LogConsole
  *@Description 自定义打印日志
- *@Author nannan.zhang
+ *@Author
  *@Date 2020/6/12 15:32
  *@Version 1.0
  **/

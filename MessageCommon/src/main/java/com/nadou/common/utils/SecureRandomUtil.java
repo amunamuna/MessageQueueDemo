@@ -7,7 +7,7 @@ import org.apache.commons.codec.binary.Base64;
 /**
  *@ClassName SecureRandomUtil
  *@Description 获取随机数
- *@Author nannan.zhang
+ *@Author
  *@Date 2020/6/2 16:10
  *@Version 1.0
  **/

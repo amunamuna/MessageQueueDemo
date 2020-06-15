@@ -7,7 +7,7 @@ import lombok.Data;
 /**
  *@ClassName clientCerRequest
  *@Description TODO
- *@Author nannan.zhang
+ *@Author
  *@Date 2020/6/13 08:53
  *@Version 1.0
  **/

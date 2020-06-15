@@ -16,7 +16,7 @@ import com.nadou.certificate.web.service.CertificateService;
 /**
  *@ClassName CertificateController
  *@Description 认证
- *@Author nannan.zhang
+ *@Author
  *@Date 2020/6/12 11:13
  *@Version 1.0
  **/

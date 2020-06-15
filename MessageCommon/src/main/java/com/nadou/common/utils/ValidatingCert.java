@@ -3,7 +3,7 @@ package com.nadou.common.utils;
 /**
  *@ClassName ValidatingCert
  *@Description TODO
- *@Author nannan.zhang
+ *@Author
  *@Date 2020/1/19 3:31 PM
  *@Version 1.0
  **/

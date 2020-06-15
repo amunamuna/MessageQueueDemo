@@ -20,7 +20,7 @@ import lombok.extern.slf4j.Slf4j;
 /**
  *@ClassName MessageReceiver
  *@Description 信息接收端
- *@Author nannan.zhang
+ *@Author
  *@Date 2020/1/10 2:15 PM
  *@Version 1.0
  **/
@@ -34,35 +34,35 @@ public class MessageReceiver {
   @Autowired
   private CertificateService certificateService;
 
-  @RabbitListener(queues = "log.queue")//监听的队列名称
+  @RabbitListener(queues = "demo_queue_topic")//监听的队列名称
   public void handle(String message) {
     try {
       JSONObject jsonObject = JSONObject.parseObject(message);
       if (jsonObject == null) {
-        LogConsole.info("客户端接收数据,格式有问题:" + message);
+        LogConsole.info("consumer客户端接收数据,格式有问题:" + message);
       } else {
-        LogConsole.info("客户端获取的队列原始消息\n:" + message);
+        LogConsole.info("consumer客户端获取的队列原始消息\n:" + message);
         String tb = jsonObject.getString("tb");
         String ticket = AESCipher.decrypt(tb, kb);
         if (ticket == null) {
           LogConsole.info("解析tb出错,请核对kb" + kb + "是否与认证服务器kb保持一致!");
         } else {
           CerTicketVo cerTicketVo = JSONObject.parseObject(ticket, CerTicketVo.class);
-          LogConsole.info("通过kb成功解密tb:"+tb);
-          LogConsole.info("向AS认证服务器发起认证");
+          LogConsole.info("consumer通过kb成功解密tb:"+tb);
+          LogConsole.info("consumer向AS认证服务器发起认证");
           CommonResult commonResult = certificateService.serverCert(cerTicketVo);
           if (commonResult != null && (ResultCode.SUCCESS.getCode() == commonResult.getCode())) {
-            LogConsole.info("AS认证成功");
+            LogConsole.info("consumerAS认证成功");
             String encryptText = jsonObject.getString("encryptText");
             byte[] encryptKey = jsonObject.getBytes("encryptKey");
             try {
               String decodeData = TransportDataUtils.decode(encryptText, encryptKey);
-              log.info("客户端解密后数据:" + decodeData);
+              log.info("consumer客户端解密后数据:" + decodeData);
             } catch (Exception e) {
-              LogConsole.info("解密出錯:",e);
+              LogConsole.info("consumer解密出錯:",e);
             }
           }else{
-            LogConsole.info("AS认证失败,请查询.");
+            LogConsole.info("consumerAS认证失败,请查询.");
           }
         }
       }
