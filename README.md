@@ -21,4 +21,4 @@ rsa 非对称加密,一般用公钥加密,用私钥解密
 
 
 
-![](1.png)
+![架构图](https://github.com/amunamuna/MessageQueueDemo/blob/master/1.png)
